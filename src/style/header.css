@@ -1,0 +1,42 @@
+.nav-wrapper {
+	align-content: center;
+	display: flex;
+	height: 60px;
+	margin-bottom: 10;
+	justify-content: flex-end;
+}
+
+.nav-link-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+}
+
+.nav-link-list li {
+    padding: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    align-self: center;
+    color: grey;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 10px,
+}
+
+.nav-link.home {
+    font-size: 32px;
+    color: black;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+.nav-link:hover {
+    color: black;
+    cursor: pointer;
+}
+

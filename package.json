@@ -1,0 +1,19 @@
+{
+  "name": "nathan-portfolio",
+  "version": "1.0.0",
+  "description": "POrtfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node_modules/.bin/eleventy --watch --serve",
+    "build": "node_modules/.bin/eleventy --build"
+  },
+  "author": "Nathan Barrett",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.0"
+  }
+}

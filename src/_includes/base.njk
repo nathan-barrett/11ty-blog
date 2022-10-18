@@ -1,0 +1,21 @@
+---
+title: My default title
+---
+
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/style/style.css"/>
+        <link rel="stylesheet" href="/style/header.css"/>
+        {% block css %}{% endblock %}
+        <title>{{title}}</title>
+    </head>
+    <body>
+        {% include "header.njk" %}
+        <main>
+            {{ content | safe }}
+        </main>
+    </body>
