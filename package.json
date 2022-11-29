@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test",
     "start": "node_modules/.bin/eleventy --watch --serve",
-    "build": "node_modules/.bin/eleventy --build"
+    "build": "npx @11ty/eleventy"
   },
   "author": "Nathan Barrett",
   "license": "ISC",
