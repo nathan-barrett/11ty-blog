@@ -1,21 +1,9 @@
 {% macro card(href, image_src, alt="", title, desc)%}
     <a href={{ href }} class="work-card" rel="noreferrer noopener" target="_blank">
-        <img src={{ image_src }} alt={{ alt }}/>
-        <h3>{{ title }}</h3>
-        <p>{{ desc }}</p>
-    </a>
-{% endmacro %}
-
-{% macro terminal_card(href, image_src, alt="", title, desc)%}
-    <a href={{ href }} class="terminal-card" rel="noreferrer noopener" target="_blank">
-        <div class="top-bar">
-            <div class="window-control red"></div>
-            <div class="window-control yellow"></div>
-            <div class="window-control green"></div>
-        </div>
-        <div class="text-window">
-            <img src={{ image_src }} alt={{ alt }}/>
+        <div class="image-container"><img src={{ image_src }} alt={{ alt }}/></div>
+        <div class="text-container">
             <h3>{{ title }}</h3>
             <p>{{ desc }}</p>
-        </a>
-    {% endmacro %}
+        </div>
+    </a>
+{% endmacro %}

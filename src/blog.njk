@@ -1,0 +1,19 @@
+---
+layout: base
+title: Nathan Barrett - Blog
+---
+
+{% set postslist = collections.post %}
+{% set postslistCounter = collections.post | length %}
+
+<section class="section-wrapper">
+    <h1>Blog</h1>
+    <div class="bio">
+        <img src="/public/images/headshot.jpg" alt="Picture of me" width="50" height="50">
+        <div>
+            <p>I'm Nathan - a web developer based in Portland, Oregon. My pronouns are he/him.</p>
+            {% include "social.njk" %}
+        </div>
+    </div>
+    {% include "postslist.njk" %}
+</section>

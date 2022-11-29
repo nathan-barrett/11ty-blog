@@ -1,14 +1,13 @@
 <nav class="nav-wrapper">
-
+    <a href="/">
+        <img class="avatar" alt="" src="/public/images/nb-avatar.png" width="50" height="50">
+    </a>
     <ul class="nav-link-list">
         <li>
-            <a href="#about" class="nav-link">about</a>
+            <a {% if page.url == "/" %} aria-current="page"{% endif %} href="/" class="nav-link">About</a>
         </li>
         <li>
-            <a href="#work" class="nav-link">work</a>
-        </li>
-        <li>
-            <a href="#contact" class="nav-link">contact</a>
+            <a {% if page.url == "/blog/" %} aria-current="page"{% endif %} href="/blog" class="nav-link">Blog</a>
         </li>
     </ul>
 </nav>

@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Mozilla.org",
+        "desc": "Large-scale, open source Django web application. The website is over two decades old and serves millions of users every day.",
+        "image_src": "./public/images/mozorg.png",
+        "href": "https://mozilla.org"
+    },
+    {
+        "title": "Protocol Design System",
+        "desc": "Protocol is Mozilla’s modular web design system. Node.js platform, published to NPM",
+        "image_src": "./public/images/protocol.png",
+        "href": "https://protocol.mozilla.org"
+    },
+    {
+        "title": "Turning Red + Mozilla Campaign",
+        "desc": "Page made for the Disney Pixar partnership with Mozilla for the release of the film Turning Red",
+        "image_src": "./public/images/true-colors.png",
+        "href": "https://web.archive.org/web/20220331113708/https://truecolors.firefox.com/"
+    },
+    {
+        "title": "ArcGIS Online",
+        "desc": "SaaS application providing mapping and GIS analysis that serves millions of users a day",
+        "image_src": "./public/images/arcgis.png",
+        "href": "https://arcgis.com"
+    },
+    {
+        "title": "Global Prepwatch",
+        "desc": "Map-based tool to explore data for PrEP use - which is used to prevent HIV",
+        "image_src": "./public/images/prep-watch.png",
+        "href": "https://data.prepwatch.org/"
+    },
+    {
+        "title": "Periscopic homepage",
+        "desc": "Periscopic, a data-visualization studio in Portland, OR",
+        "image_src": "./public/images/periscopic.png",
+        "href": "https://periscopic.com"
+    }
+]

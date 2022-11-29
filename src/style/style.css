@@ -1,23 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+
+:root {
+  --content-width: 1200px;
+  --blog-width: 720px;
+  --background-color: #eee;
+  --color-black: #000;
+  --color-primary-link: #005b99;
+  --font-size-header: 3rem;
+  --font-size-body: 1rem;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  src:
+      url('./fonts/Inter-Regular.woff2') format('woff2'),
+      url('./fonts/Inter-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  src:
+      url('./fonts/Inter-Bold.woff2') format('woff2'),
+      url('./fonts/Inter-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: italic;
+  font-weight: normal;
+  src:
+      url('./fonts/Inter-Italic.woff2') format('woff2'),
+      url('./fonts/Inter-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: italic;
+  font-weight: bold;
+  src:
+      url('./fonts/Inter-BoldItalic.woff2') format('woff2'),
+      url('./fonts/Inter-BoldItalic.woff') format('woff');
+}
 
 html, body {
     background-color: #eee;
     margin: 0;
+    scroll-behavior: smooth;
   }
 
   body {
-    max-width: 1020px;
+    max-width: var(--content-width);
 	  padding-left: 50px;
 	  padding-right: 50px;
 	  margin-left: auto;
 	  margin-right: auto;
-	  font-family: 'Montserrat', sans-serif;
+	  font-family: 'Inter', sans-serif;
+  }
+
+  .social-wrapper a {
+    color: var(--color-black);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+  }
+
+  .social-wrapper a:hover {
+    color: var(--color-primary-link);
+  }
+
+  .social-wrapper svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-wrapper svg path {
+    fill: currentColor;
+  }
+
+  .section-wrapper {
+    margin: 24px 0;
+  }
+
+
+  .section-wrapper h1, .section-wrapper h2 {
+    border-bottom: 3px solid black;
+    font-size: var(--font-size-header);
+    width: 100%;
   }
 
   .section-wrapper#about {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 32px;
+    flex-direction: column;
+    margin-top: 48px;
   }
 
   .about-text {
@@ -25,11 +109,14 @@ html, body {
   }
 
   .about-text h1 {
-    font-size: 3rem;
+    width: 100%;
+    border-bottom: 3px solid black;
+    font-size: var(--font-size-header);
   }
 
   .about-image {
-    max-width: 400px;
+    margin: 40px auto 0;
+    max-width: 350px;
   }
 
   .about-image img {
@@ -39,23 +126,132 @@ html, body {
 
   .work-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-column-gap: 45px;
     grid-row-gap: 50px;
   }
 
   .work-card {
     text-decoration: none;
+    transition: box-shadow 0.3s ease-in-out;
   }
   
-  .work-card img {
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .work-card:hover img {
-    transform: scale(1.05);
+  .work-card .image-container {
+    overflow: hidden;
+    background: white;
   }
 
   .work-card img {
+    transition: transform 0.3s ease-in;
     max-width: 100%;
+  }
+
+  .work-card .text-container {
+    padding: 10px;
+    color: black;
+  }
+
+  .bio {
+    display: flex;
+    margin-bottom: 21px;
+  }
+
+  .bio img {
+    border-radius: 100%;
+    margin-right: 18px;
+    align-self: center;
+  }
+
+  .bio svg {
+   height: 24px;
+   width: 24px;
+  }
+
+  .postlist {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .postlist-link {
+    display: block;
+    color: var(--color-black);
+    text-decoration-color: var(--color-primary-link);
+    text-decoration-thickness: 2px;
+    text-decoration-offset: 1px;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .post-wrapper {
+    max-width: var(--blog-width);
+    margin: 0 auto;
+  }
+
+  .post-title {
+    font-size: var(--font-size-header);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 3px solid var(--color-black);
+  }
+
+  .post-wrapper h2 {
+    font-size: var(--font-size-header);
+  }
+
+  .post-wrapper p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  a {
+    font-weight: 500;
+    color: var(--color-black);
+    text-decoration-color: var(--color-primary-link);
+    text-decoration-thickness: 2px;
+  }
+
+  .post-wrapper li {
+    margin-bottom: 12px;
+  }
+
+  .footer {
+    padding: 32px 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .work-card:hover {
+      box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+    }
+  
+    .work-card:hover img{
+      transform: scale(1.1);
+    }
+  }
+
+  @media (min-width: 720px) {
+    .section-wrapper#about {
+      flex-direction: row;
+    }
+
+    .work-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1020px) {
+    .section-wrapper h2 {
+      width: 60%;
+    }
+
+    .about-test h1 {
+      width: 60%;
+    }
+
+    .about-image {
+      max-width: 40%;
+    }
+
+    .work-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }

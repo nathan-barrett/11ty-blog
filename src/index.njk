@@ -9,55 +9,28 @@ title: Nathan Barrett
     <section id="about" class="section-wrapper">
         <div class="about-text">
             <h1>Hi, I'm Nathan.</h1>
-            <p>I'm a web developer based in Portland, Oregon - I make websites that are acessible, responsive and easy to use.</p>
-            {# <p>I started my career as a web developer working for <a href="http://www.periscopic.com">Periscopic</a> working with clients ad foundations on data visualizations.  
-            I then worked at ESRI, Inc. on their online platform, <a href="https://www.esri.com/en-us/arcgis/about-arcgis/overview">ArcGIS</a>. #}
+            <p>I'm a web developer based in Portland, Oregon - I make websites that are acessible, responsive and easy to use. My pronouns are: he/him.</p>
             <p>I work at Mozilla on <a href="http://www.mozilla.org">mozilla.org</a>, their <a href="https://protocol.mozilla.org" target="_blank">Protocol design system</a>, and any other fun projects that I can.</p>
             <p>I have professional experience working with Javascript, HTML, CSS, NodeJS and Python.</p>
+            {% include "social.njk" %}
         </div>
         <div class="about-image">
             <img src="./public/images/headshot.jpg" srcset="./public/images/headshot-high-res.jpg 2x" loading="lazy" alt="Photo of Nathan">
         </div>
     </section>
-    <section id="work">
-        <h2>Work</h2>
+    <section class="section-wrapper" id="work">
+        <div class="heading-wrapper">
+            <h2>Work</h2>
+        </div>
         <div class="work-grid">
-            {{ card(
-                href="https://mozilla.org", 
-                image_src="./public/images/mozorg.png", 
-                title="Mozilla.org", 
-                desc="Large-scale, open source Django web application. The website is over two decades old and serves millions of users every day.") 
-            }}
-            {{ card(
-                href="https://protocol.mozilla.org", 
-                image_src="./public/images/protocol.png", 
-                title="Protocol Design System", 
-                desc="Protocol is Mozilla’s modular web design system. Node.js platform, published to NPM") 
-            }}
-            {{ card(
-                href="https://web.archive.org/web/20220331113708/https://truecolors.firefox.com/", 
-                image_src="./public/images/true-colors.png", 
-                title="Turning Red + Mozilla Campaign", 
-                desc="Page made for the Disney Pixar partnership with Mozilla for the release of the film Turning Red") 
-            }}
-            {{ card(
-                href="https://arcgis.com", 
-                image_src="./public/images/arcgis.png", 
-                title="ArcGIS Online", 
-                desc="SaaS application providing mapping and GIS analysis that serves millions of users a day") 
-            }}
-            {{ card(
-                href="https://periscopic.com", 
-                image_src="./public/images/periscopic.png", 
-                title="Periscopic homepage", 
-                desc="Periscopic, a data-visualization studio in Portland, OR") 
-            }}
-            {{ card(
-                href="https://data.prepwatch.org/", 
-                image_src="./public/images/prep-watch.png", 
-                title="Global Prepwatch", 
-                desc="Map-based tool to explore data for PrEP use - which is used to prevent HIV") 
-            }}
+            {% for project in projects %}
+                {{ card(
+                    href=project.href, 
+                    image_src=project.image_src, 
+                    title=project.title, 
+                    desc=project.desc
+                )}}
+            {% endfor %}
         </div>
     </section>
 </body>
