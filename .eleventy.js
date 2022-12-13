@@ -2,6 +2,7 @@ const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const readingTime = require("eleventy-plugin-reading-time");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const markdownIt = require("markdown-it");
 
 module.exports = function (config) {
   config.addPassthroughCopy({ "./src/style/": "style" });
@@ -18,6 +19,8 @@ module.exports = function (config) {
   config.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
+
+  config.setLibrary("md", markdownIt({html: true, breaks: true}));
 
   config.addPlugin(syntaxHighlight);
   config.addPlugin(readingTime);
